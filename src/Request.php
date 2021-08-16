@@ -111,7 +111,7 @@ class Request extends \yii\web\Request
             $this->_uploadedFiles = [];
             foreach($_FILES as $file) {
                 $stream = new Stream(fopen($file['tmp_name'], 'rb'));
-                $this->uploadedFiles[] = new UploadedFile(
+                $this->_uploadedFiles[] = new UploadedFile(
                     $stream,
                     $file['size'] ?? $stream->getSize(),
                     $file['error'],
